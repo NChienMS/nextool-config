@@ -1,0 +1,20 @@
+{
+  "promo": {
+    "enabled": true,
+    "title_vi": "Khuyến mãi từ xa",
+    "title_en": "Remote Promotion",
+    "message_vi": "Popup này được load từ GitHub JSON.",
+    "message_en": "This popup is loaded from GitHub JSON.",
+    "image_url": "https://picsum.photos/300/150", 
+    "cta_text_vi": "Truy cập",
+    "cta_text_en": "Open",
+    "cta_url": "https://posapp.vn",
+    "show_after_seconds": 5,
+    "dismissible": true,
+    "start_utc": "",
+    "end_utc": "",
+    "min_app_version_code": 1,
+    "frequency_per_session": 1,
+    "frequency_per_day": 1
+  }
+}
