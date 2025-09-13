@@ -2,9 +2,9 @@
   "promo": {
     "enabled": true,
     "title_vi": "Xin chào ngày mới",
-    "title_en": "Remote Promotion",
-    "message_vi": "Popup này được load từ GitHub JSON.",
-    "message_en": "This popup is loaded from GitHub JSON.",
+    "title_en": "Xin chào ngày mới",
+    "message_vi": "Chúc bạn ngày mới tốt lành",
+    "message_en": "Chúc bạn ngày mới tốt lành",
     "image_url": "https://picsum.photos/300/150", 
     "cta_text_vi": "Truy cập",
     "cta_text_en": "Open",
