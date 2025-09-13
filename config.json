@@ -1,7 +1,7 @@
 {
   "promo": {
     "enabled": true,
-    "title_vi": "Khuyến mãi từ xa",
+    "title_vi": "Xin chào ngày mới",
     "title_en": "Remote Promotion",
     "message_vi": "Popup này được load từ GitHub JSON.",
     "message_en": "This popup is loaded from GitHub JSON.",
