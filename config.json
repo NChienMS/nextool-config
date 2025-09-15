@@ -3,18 +3,18 @@
     "enabled": true,
     "title_vi": "Xin chào ngày mới",
     "title_en": "Xin chào ngày mới",
-    "message_vi": "Chúc bạn ngày mới tốt lành, ấn truy cập để mở trình tìm kiếm",
-    "message_en": "Chúc bạn ngày mới tốt lành ấn truy cập để mở trình tìm kiếm",
-    "image_url": "https://ariesvn8.wordpress.com/wp-content/uploads/2025/07/img2.jpg", 
+    "message_vi": "Hoàng Sa & Trường Sa là của VIỆT NAM",
+    "message_en": "Hoang Sa & Truong Sa belong to VIETNAM",
+    "image_url": "https://ariesvn8.wordpress.com/wp-content/uploads/2025/09/536623124_122165061428467766_5360558812440647841_n.jpg", 
     "cta_text_vi": "Truy cập",
     "cta_text_en": "Open",
-    "cta_url": "https://posapp.vn",
+    "cta_url": "https://nhandan.vn/khang-dinh-chu-quyen-cua-viet-nam-tren-hai-quan-dao-hoang-sa-truong-sa-post744843.html",
     "show_after_seconds": 5,
     "dismissible": true,
     "start_utc": "",
     "end_utc": "",
     "min_app_version_code": 1,
-    "frequency_per_session": 10,
+    "frequency_per_session": 1,
     "frequency_per_day": 100
   }
 }
