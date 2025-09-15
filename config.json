@@ -9,13 +9,13 @@
     "cta_text_vi": "Truy cập",
     "cta_text_en": "Open",
     "cta_url": "https://nhandan.vn/khang-dinh-chu-quyen-cua-viet-nam-tren-hai-quan-dao-hoang-sa-truong-sa-post744843.html",
-    "show_after_seconds": 5,
+    "show_after_seconds": 15,
     "dismissible": true,
     "start_utc": "",
     "end_utc": "",
     "min_app_version_code": 1,
     "frequency_per_session": 1,
-    "frequency_per_day": 10
+    "frequency_per_day": 3
   },
   "ads": {
     "enabled": false,
