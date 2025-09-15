@@ -15,6 +15,6 @@
     "end_utc": "",
     "min_app_version_code": 1,
     "frequency_per_session": 2,
-    "frequency_per_day": 5
+    "frequency_per_day": 10
   }
 }
