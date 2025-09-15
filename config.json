@@ -18,7 +18,7 @@
     "frequency_per_day": 10
   },
   "ads": {
-    "enabled": true,
+    "enabled": false,
     "interval_sec": 60,
     "interstitial_id": "ca-app-pub-3940256099942544/1033173712", 
     "min_app_vc": 1,
