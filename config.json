@@ -1,7 +1,7 @@
 {
   "promo": {
     "enabled": true,
-    "title_vi": "Xin chào!!!",
+    "title_vi": "Xin chào!",
     "title_en": "Hello!",
     "message_vi": "Hoàng Sa & Trường Sa là của VIỆT NAM \n Hoàng Sa & Trường Sa là của VIỆT NAM",
     "message_en": "Hoang Sa & Truong Sa belong to VIETNAM",
@@ -9,7 +9,7 @@
     "cta_text_vi": "Truy cập",
     "cta_text_en": "Open",
     "cta_url": "https://nhandan.vn/khang-dinh-chu-quyen-cua-viet-nam-tren-hai-quan-dao-hoang-sa-truong-sa-post744843.html",
-    "show_after_seconds": 15,
+    "show_after_seconds": 5,
     "dismissible": true,
     "start_utc": "",
     "end_utc": "",
