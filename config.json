@@ -29,4 +29,15 @@
     "ad_unit_id": "ca-app-pub-2714073603888485/5820217512",
     "show_after_seconds": 2
   }
+  
+    "native_half_screen": {
+    "enabled": true,
+    "ad_unit_id": "ca-app-pub-3940256099942544/2247696110",
+    "show_after_overlay": true
+  },
+
+  "native_sticky_bottom": {
+    "enabled": true,
+    "ad_unit_id": "ca-app-pub-3940256099942544/2247696110"
+  }
 }
