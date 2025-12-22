@@ -25,12 +25,8 @@
     "max_daily_impressions": 10
   },
   "native_overlay": {
-  "enabled": true,
-  "ad_unit_id": "ca-app-pub-2714073603888485/5820217512",
-  "show_after_seconds": 2,
-  "timeout_seconds": 5,
-  "max_per_session": 1,
-  "max_per_day": 3,
-  "min_app_version": 1
-}
+    "enabled": true,
+    "ad_unit_id": "ca-app-pub-2714073603888485/5820217512",
+    "show_after_seconds": 2
+  }
 }
