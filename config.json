@@ -28,7 +28,7 @@
     
     "enabled": true,
     "ad_unit_id": "ca-app-pub-2714073603888485/5820217512",
-    "show_after_seconds": 2
+    "show_after_seconds": 1
   },
     "native_half_screen": {
     "enabled": true,
