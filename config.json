@@ -19,10 +19,10 @@
   },
   "ads": {
     "enabled": false,
-    "interval_sec": 30,
+    "interval_sec": 120,
     "interstitial_id": "ca-app-pub-2714073603888485/8196577142", 
     "min_app_vc": 1,
-    "max_daily_impressions": 10
+    "max_daily_impressions": 2
   },
   "native_overlay": {
     
