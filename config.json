@@ -1,43 +1,16 @@
 {
-  "promo": {
+  "meta": {
+    "version": 1,
+    "updatedAt": "2026-01-12"
+  },
+
+  "remotenoti": {
     "enabled": true,
-    "title_vi": "Xin chào!",
-    "title_en": "Hello!",
-    "message_vi": "Hoàng Sa & Trường Sa là của VIỆT NAM\nHoàng Sa & Trường Sa là của VIỆT NAM",
-    "message_en": "Hoang Sa & Truong Sa belong to VIETNAM",
-    "image_url": "https://ariesvn8.wordpress.com/wp-content/uploads/2025/09/untitled-1.jpg", 
-    "cta_text_vi": "Truy cập",
-    "cta_text_en": "Open",
-    "cta_url": "https://nhandan.vn/khang-dinh-chu-quyen-cua-viet-nam-tren-hai-quan-dao-hoang-sa-truong-sa-post744843.html",
-    "show_after_seconds": 3,
-    "dismissible": true,
-    "start_utc": "",
-    "end_utc": "",
-    "min_app_version_code": 1,
-    "frequency_per_session": 3,
-    "frequency_per_day": 100
-  },
-  "ads": {
-    "enabled": false,
-    "interval_sec": 120,
-    "interstitial_id": "ca-app-pub-2714073603888485/8196577142", 
-    "min_app_vc": 1,
-    "max_daily_impressions": 2
-  },
-  "native_overlay": {
-    
-    "enabled": false,
-    "ad_unit_id": "ca-app-pub-2714073603888485/5820217512",
-    "show_after_seconds": 1
-  },
-    "native_half_screen": {
-    "enabled": false,
-    "ad_unit_id": "ca-app-pub-2714073603888485/4091384633",
-    "show_after_overlay": true
-  },
-  "native_sticky_bottom": {
-    "enabled": false,
-    "ad_unit_id": "ca-app-pub-2714073603888485/4645918402"
+    "title": "Chủ quyền biển đảo",
+    "content": "Hoàng Sa, Trường Sa là của Việt Nam. Đây là sự thật lịch sử và pháp lý không thể phủ nhận.",
+    "imageUrl": "https://ariesvn8.wordpress.com/wp-content/uploads/2025/09/untitled-1.jpg",
+    "actionUrl": "https://nhandan.vn/khang-dinh-chu-quyen-cua-viet-nam-tren-hai-quan-dao-hoang-sa-truong-sa-post744843.html",
+    "delaySeconds": 3,
+    "showCountPerVersion": 1
   }
-  
 }
