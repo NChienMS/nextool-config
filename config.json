@@ -18,7 +18,7 @@
     "frequency_per_day": 100
   },
   "ads": {
-    "enabled": true,
+    "enabled": false,
     "interval_sec": 120,
     "interstitial_id": "ca-app-pub-2714073603888485/8196577142", 
     "min_app_vc": 1,
@@ -26,17 +26,17 @@
   },
   "native_overlay": {
     
-    "enabled": true,
+    "enabled": false,
     "ad_unit_id": "ca-app-pub-2714073603888485/5820217512",
     "show_after_seconds": 1
   },
     "native_half_screen": {
-    "enabled": true,
+    "enabled": false,
     "ad_unit_id": "ca-app-pub-2714073603888485/4091384633",
     "show_after_overlay": true
   },
   "native_sticky_bottom": {
-    "enabled": true,
+    "enabled": false,
     "ad_unit_id": "ca-app-pub-2714073603888485/4645918402"
   }
   
