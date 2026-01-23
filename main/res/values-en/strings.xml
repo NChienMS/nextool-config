@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PRINTER NT</string>
+    <string name="settings">SETTINGS</string>
+    <string name="help">Help</string>
+    <string name="close">Close</string>
+
+    <string name="settings_language">Language</string>
+    <string name="dialog_title_language">Change Language</string>
+    <string name="lang_vi">Vietnamese</string>
+    <string name="lang_en">English</string>
+
+    <string name="btn_refresh">Refresh</string>
+    <string name="btn_wifi">Wi-Fi Settings</string>
+    <string name="btn_wifi_usb">1.4 Wi-Fi Settings</string>
+
+    <string name="btn_check">Check</string>
+    <string name="btn_change_ip">Change IP</string>
+    <string name="btn_test_page">Print Test Page</string>
+    <string name="btn_cut">Paper Cutter</string>
+    <string name="btn_cashdrawer">Cash Drawer</string>
+    <string name="btn_beep">Apply BEEP</string>
+    <string name="btn_dhcp">Apply DHCP</string>
+    <string name="btn_restore">Restore Settings</string>
+
+    <string name="btn_check_feature">1.1 CHECK FEATURES</string>
+    <string name="btn_beep_cut">1.2 CUT SOUND</string>
+    <string name="btn_status">Status</string>
+    <string name="btn_counter">Counter</string>
+    <string name="btn_duration">Duration/each (×50ms)</string>
+    <string name="btn_mode">Sound mode</string>
+    <string name="btn_dhcp_config">1.3 DHCP Configuration</string>
+    <string name="btn_off">Off</string>
+    <string name="btn_on">On</string>
+
+    <string name="btn_search">Search</string>
+
+    <string name="btn_applywifi">Apply Wi-Fi</string>
+    <string name="msg_wifi_note">* Wi-Fi name should not contain accents or special characters.</string>
+    <string name="lbl_wifi_ssid">Wi-Fi Network Name (SSID)</string>
+    <string name="lbl_wifi_password">Wi-Fi Password</string>
+    <string name="msg_ip_usb_note">* Change IP (USB) only validates IPv4 format, does not check for duplicate IP.</string>
+
+    <string name="btn_apply">Change IP</string>
+    <string name="lbl_current_ip">Current Printer IP...</string>
+    <string name="lbl_auto">AUTO</string>
+    <string name="lbl_port">1. PORT</string>
+
+    <string name="msg_scan_note">* Tap search, the application will display the list of printers on the LAN</string>
+    <string name="msg_enter_new_ip">* Enter the new IP address you want to set</string>
+    <string name="lbl_ip_address">IP Address...</string>
+    <string name="lbl_subnet_mask">Subnet Mask...</string>
+    <string name="lbl_gateway">Gateway...</string>
+    <string name="lbl_network_name">Network Name</string>
+
+    <string name="fmt_network_name">Network Name: %s</string>
+    <string name="fmt_ip_address">IP Address: %s</string>
+    <string name="fmt_subnet_mask">Subnet Mask: %s</string>
+    <string name="fmt_gateway">Gateway: %s</string>
+
+    <string name="msg_network_refresh">Network refreshed → SSID=%1$s, IP=%2$s, MASK=%3$s, GW=%4$s</string>
+    <string name="msg_network_refreshed">Network information refreshed</string>
+    <string name="err_invalid_mac">Invalid MAC address: %s</string>
+
+
+    <string name="cmd_fail">Send command failed.</string>
+    <string name="err_ip_current_invalid">Please enter a valid current IP.</string>
+    <string name="err_ip_new_invalid">Please enter a valid new IP.</string>
+    <string name="err_mask_invalid">Please enter a valid subnet mask.</string>
+    <string name="err_gw_invalid">Please enter a valid gateway.</string>
+    <string name="err_usb_no_device">No USB device selected, press Search if no device is found.</string>
+
+    <string name="advanced">Advanced</string>
+
+    <string name="err_gw_not_same_subnet">
+    The gateway is not in the same subnet as the new IP.\n Please check the information again.
+    </string>
+
+    <!-- Loading & success -->
+    <string name="msg_sending">Sending command</string>
+    <string name="sent_check_printer">Printer check command sent</string>
+    <string name="sent_change_ip">Change IP command sent</string>
+    <string name="sent_test_page">Test page command sent</string>
+    <string name="sent_cut_test">Cutter check command sent</string>
+    <string name="sent_cashdrawer">Cash drawer check command sent</string>
+    <string name="sent_beep_set">Sound setting command sent</string>
+    <string name="sent_dhcp_set">DHCP setting command sent</string>
+    <string name="sent_wifi_set">Wi-Fi setting command sent</string>
+    <string name="sent_restore_factory">Factory reset command sent</string>
+    
+    <string name="USBPORT">USB</string>
+    <string name="err_wifi_ssid_required">Please enter Wi-Fi SSID.</string>
+
+    <string name="usb_not_found">No USB port detected</string>
+    <string name="usb_found">Detected</string>
+
+    <!-- LAN checking -->
+    <string name="lan_checking_ip">Checking IP:</string>
+    <string name="lan_found_ip">Printer found at IP:</string>
+    <string name="lan_retrying">: not connected > retrying</string>
+    <string name="lan_not_printer">A device is in use but it doesn’t seem to be a printer</string>
+    <string name="lan_not_found">No device found at IP</string>
+
+    <string name="lan_ip_in_use">This IP is already in use. Please enter a different IP</string>
+
+    <string name="lan_send_ok">
+    Command sent successfully.\n
+    • You may hear a “beep/click”\n
+    • Network LED will turn off/on for a few seconds\n
+    • The new IP should be usable\n
+    </string>
+
+    <string name="lan_send_fail">
+    Send failed. Please check network/Wi-Fi connection and current IP\n
+    • Try again later\n
+    </string>
+    <string name="lbl_ip">2. CHANGE IP</string>
+    <string name="open">Open</string>
+
+    <string name="settings_guide">User Guide</string>
+    <string name="settings_contact">Contact</string>
+    <string name="guide_url">https://nextool.vn/guide</string>
+    <string name="contact_title">Contact Information</string>
+    <string name="contact_email_label">Email:</string>
+    <string name="contact_telegram_label">Telegram:</string>
+    <string name="copy_success">Copied</string>
+    <string name="splash_hello">Hello!</string>
+    <string name="splash_sub">Have a productive day</string>
+    <string name="label_app_name">APPLICATION NAME:</string>
+    <string name="label_developer">DEVELOPER: YC SOFT</string>
+    <string name="label_desc">DESCRIPTION: App to configure and test thermal printers</string>
+    <string name="label_version">Version:</string>
+
+    <string name="about_title">About App</string>
+    <string name="about_hint">*Tap to copy, long press to contact quickly</string>
+    <string name="msg_no_browser_explain">This device has no browser or WebView is disabled. Cannot open the guide page.</string>
+
+
+    <string name="webmenu_help">User Guide</string>
+    <string name="webmsg_invalid_link">Invalid link.</string>
+    <string name="webmsg_cannot_open_link">Cannot open link</string>
+    <string name="webmsg_no_browser_explain">
+        This device has no browser app or the WebView provider is disabled.
+        Please enable/update "Android System WebView" (or Chrome as the WebView provider) and try again.
+    </string>
+
+    <string name="copy_ip">Copy IP</string>
+    <string name="copied_ip">Copied: %1$s</string>
+    <string name="ip_empty">No IP address entered</string>
+
+
+
+
+
+
+
+</resources>

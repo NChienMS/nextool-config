@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/bg_dialog_language"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!-- Header cam, bo góc trên -->
+    <TextView
+        android:id="@+id/tvHeader"
+        android:background="@drawable/bg_dialog_lang_header"
+        android:text="@string/dialog_title_language"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:padding="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <!-- Danh sách 2 ngôn ngữ -->
+    <LinearLayout
+        android:id="@+id/rowsContainer"
+        android:orientation="vertical"
+        android:padding="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Row: Vietnamese -->
+        <LinearLayout
+            android:id="@+id/rowVi"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:foreground="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:src="@drawable/lang_vi"
+                android:layout_width="28dp"
+                android:layout_height="18dp"
+                android:contentDescription="@string/lang_vi"
+                android:scaleType="centerCrop"/>
+
+            <TextView
+                android:id="@+id/tvVi"
+                android:text="@string/lang_vi"
+                android:textSize="16sp"
+                android:layout_marginStart="12dp"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+            <RadioButton
+                android:id="@+id/rbVi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <!-- Divider -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#E0E0E0"/>
+
+        <!-- Row: English -->
+        <LinearLayout
+            android:id="@+id/rowEn"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:foreground="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:src="@drawable/lang_en"
+                android:layout_width="28dp"
+                android:layout_height="18dp"
+                android:contentDescription="@string/lang_en"
+                android:scaleType="centerCrop"/>
+
+            <TextView
+                android:id="@+id/tvEn"
+                android:text="@string/lang_en"
+                android:textSize="16sp"
+                android:layout_marginStart="12dp"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+            <RadioButton
+                android:id="@+id/rbEn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

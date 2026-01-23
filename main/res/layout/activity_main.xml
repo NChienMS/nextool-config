@@ -1,0 +1,1496 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <!-- Nội dung chính -->
+
+    <!-- Menu trượt từ phải -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rootContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white">
+
+        <!-- Thanh trên cùng -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/header"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:background="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <!-- Logo nhỏ bên trái -->
+            <ImageView
+                android:id="@+id/imgLogoSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginStart="12dp"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/app_name"
+                android:scaleType="fitCenter"
+                android:src="@drawable/nplogo"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- Nút cài đặt -->
+            <ImageView
+                android:id="@+id/ivSettings"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="8dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/settings"
+                android:padding="12dp"
+                android:src="@drawable/ic_settings"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- Nút help -->
+            <ImageView
+                android:id="@+id/ivHelp"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="4dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/help"
+                android:padding="12dp"
+                android:src="@drawable/ic_help"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/ivSettings"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- PHẦN THÂN CÓ THỂ CUỘN -->
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scrollBody"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            app:layout_constraintTop_toBottomOf="@id/header"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/bannerContainer">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="80dp"
+                >
+
+
+
+
+                <!-- KHỐI PORT SELECT -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardPortSelect"
+                    style="@style/Widget.MaterialComponents.CardView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="16dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="4dp"
+                    android:paddingBottom="80dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:text="@string/lbl_port"
+                            android:textColor="#111111"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+
+                        <RadioGroup
+                            android:id="@+id/rgPort"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/rbUsb"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="true"
+                                android:text="USB" />
+
+                            <RadioButton
+                                android:id="@+id/rbLan"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:text="LAN" />
+
+                            <RadioButton
+                                android:id="@+id/rbUid"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:text="@string/lbl_auto" />
+                        </RadioGroup>
+                        <!-- USB content -->
+                        <LinearLayout
+                            android:id="@+id/usbGroup"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tvUsbStatus"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingBottom="4dp"
+                                android:text="@string/usb_not_found"
+                                android:textColor="?attr/colorOnSurfaceVariant"
+                                android:textSize="12sp" />
+
+                            <!-- Hàng chọn cổng USB -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <Spinner
+                                    android:id="@+id/spUsbDevices"
+                                    android:layout_width="0dp"
+                                    android:layout_height="40dp"
+                                    android:layout_weight="1" />
+
+                                <com.google.android.material.button.MaterialButton
+                                    android:id="@+id/btnUsbScan"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="40dp"
+                                    android:layout_marginStart="8dp"
+                                    android:text="@string/btn_search" />
+                            </LinearLayout>
+
+                            <!-- Hàng nút tác vụ (USB): Kiểm tra + In trang kiểm tra -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:orientation="horizontal">
+
+                                <com.google.android.material.button.MaterialButton
+                                    android:id="@+id/btnUsbTest"
+                                    android:layout_width="0dp"
+                                    android:layout_height="40dp"
+                                    android:layout_weight="1"
+                                    android:text="@string/btn_check"
+                                    app:cornerRadius="8dp" />
+
+                                <com.google.android.material.button.MaterialButton
+                                    android:id="@+id/btnUsbInfo"
+                                    android:layout_width="0dp"
+                                    android:layout_height="40dp"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_weight="1"
+                                    android:text="@string/btn_test_page"
+                                    app:cornerRadius="8dp" />
+                            </LinearLayout>
+                            <!-- NEW: Thanh bung Nâng cao (USB) -->
+                            <TextView
+                                android:id="@+id/tvUsbAdvancedToggle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="12dp"
+                                android:background="?attr/selectableItemBackground"
+                                android:padding="10dp"
+                                android:text="@string/advanced"
+                                android:textColor="#1565C0"
+                                android:textStyle="bold" />
+
+                            <!-- NEW: Nhóm Nâng cao (USB) – mặc định ẩn -->
+                            <LinearLayout
+                                android:id="@+id/groupUsbAdvanced"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="6dp"
+                                android:orientation="vertical"
+                                android:visibility="gone">
+
+                                <!-- 1) KIỂM TRA TÍNH NĂNG (USB) -->
+                                <LinearLayout
+                                    android:id="@+id/usbAdvTestGroup"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:paddingTop="2dp"
+                                        android:paddingBottom="6dp"
+                                        android:text="@string/btn_check_feature"
+                                        android:textColor="#111111"
+                                        android:textSize="15sp"
+                                        android:textStyle="bold" />
+
+                                    <!-- Hàng 1: 2 nút cùng hàng -->
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <!-- TEST IN + DAO CẮT (USB) -->
+                                        <com.google.android.material.button.MaterialButton
+                                            android:id="@+id/btnUsbAdvEscposTest"
+                                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                                            android:layout_width="0dp"
+                                            android:layout_height="40dp"
+                                            android:layout_weight="1"
+                                            android:text="@string/btn_cut"
+                                            android:textColor="#FFFFFF"
+                                            app:backgroundTint="#998ac3"
+                                            app:textAllCaps="false" />
+
+                                        <!-- TEST KÉT (USB) -->
+                                        <com.google.android.material.button.MaterialButton
+                                            android:id="@+id/btnUsbAdvCashDrawer"
+                                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                                            android:layout_width="0dp"
+                                            android:layout_height="40dp"
+                                            android:layout_marginStart="8dp"
+                                            android:layout_weight="1"
+                                            android:text="@string/btn_cashdrawer"
+                                            android:textColor="#FFFFFF"
+                                            app:backgroundTint="#998ac3"
+                                            app:textAllCaps="false" />
+                                    </LinearLayout>
+                                </LinearLayout>
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:background="#005BB9" />
+
+                                <!-- 2) ÂM THANH KHI CẮT GIẤY (USB) -->
+                                <LinearLayout
+                                    android:id="@+id/usbAdvBeepGroup"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:paddingTop="6dp"
+                                        android:text="@string/btn_beep_cut"
+                                        android:textColor="#111111"
+                                        android:textSize="15sp"
+                                        android:textStyle="bold" />
+
+                                    <!-- Hàng 1: Enable ON/OFF -->
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="2"
+                                            android:gravity="center_vertical"
+                                            android:text="@string/btn_status"
+                                            android:textColor="#333333"
+                                            android:textSize="14sp" />
+
+                                        <Spinner
+                                            android:id="@+id/spUsbBeepEnable"
+                                            android:layout_width="0dp"
+                                            android:layout_height="40dp"
+                                            android:layout_weight="1" />
+                                    </LinearLayout>
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="1dp"
+                                        android:background="#d4c7df" />
+
+                                    <!-- Hàng 2: Counter 1-20 -->
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="6dp"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="2"
+                                            android:gravity="center_vertical"
+                                            android:text="@string/btn_counter"
+                                            android:textColor="#333333"
+                                            android:textSize="14sp" />
+
+                                        <Spinner
+                                            android:id="@+id/spUsbBeepCounter"
+                                            android:layout_width="0dp"
+                                            android:layout_height="40dp"
+                                            android:layout_weight="1" />
+                                    </LinearLayout>
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="1dp"
+                                        android:background="#d4c7df" />
+
+                                    <!-- Hàng 3: Time (×50ms) 1-20 -->
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="6dp"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="2"
+                                            android:gravity="center_vertical"
+                                            android:text="@string/btn_duration"
+                                            android:textColor="#333333"
+                                            android:textSize="14sp" />
+
+                                        <Spinner
+                                            android:id="@+id/spUsbBeepTime"
+                                            android:layout_width="0dp"
+                                            android:layout_height="40dp"
+                                            android:layout_weight="1" />
+                                    </LinearLayout>
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="1dp"
+                                        android:background="#d4c7df" />
+
+                                    <!-- Hàng 4: Mode 0-4 -->
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="6dp"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="2"
+                                            android:gravity="center_vertical"
+                                            android:text="@string/btn_mode"
+                                            android:textColor="#333333"
+                                            android:textSize="14sp" />
+
+                                        <Spinner
+                                            android:id="@+id/spUsbBeepMode"
+                                            android:layout_width="0dp"
+                                            android:layout_height="40dp"
+                                            android:layout_weight="1" />
+                                    </LinearLayout>
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="1dp"
+                                        android:background="#d4c7df" />
+
+                                    <!-- Nút gửi -->
+                                    <com.google.android.material.button.MaterialButton
+                                        android:id="@+id/btnUsbAdvBeepSet"
+                                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="40dp"
+                                        android:layout_marginTop="10dp"
+                                        android:text="@string/btn_beep"
+                                        android:textColor="#FFFFFF"
+                                        app:backgroundTint="#998ac3"
+                                        app:textAllCaps="false" />
+                                </LinearLayout>
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:background="#005BB9" />
+
+                                <!-- 3) DHCP (USB) -->
+                                <LinearLayout
+                                    android:id="@+id/usbAdvDhcpGroup"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:paddingTop="2dp"
+                                        android:paddingBottom="6dp"
+                                        android:text="@string/btn_dhcp_config"
+                                        android:textAllCaps="true"
+                                        android:textColor="#111111"
+                                        android:textSize="15sp"
+                                        android:textStyle="bold" />
+
+                                    <!-- Hàng trạng thái: label trái + spinner phải -->
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:paddingTop="2dp"
+                                        android:paddingBottom="4dp">
+
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="40dp"
+                                            android:layout_weight="2"
+                                            android:gravity="center_vertical"
+                                            android:text="@string/btn_status"
+                                            android:textColor="#333333"
+                                            android:textSize="14sp" />
+
+                                        <Spinner
+                                            android:id="@+id/spUsbDhcp"
+                                            android:layout_width="0dp"
+                                            android:layout_height="40dp"
+                                            android:layout_weight="1" />
+                                    </LinearLayout>
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="1dp"
+                                        android:background="#d4c7df" />
+
+                                    <com.google.android.material.button.MaterialButton
+                                        android:id="@+id/btnUsbAdvDhcpSet"
+                                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="40dp"
+                                        android:layout_marginTop="10dp"
+                                        android:text="@string/btn_dhcp"
+                                        android:textColor="#FFFFFF"
+                                        app:backgroundTint="#998ac3"
+                                        app:textAllCaps="false" />
+                                </LinearLayout>
+
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:background="#005BB9" />
+
+
+                                <!-- 5) CÀI ĐẶT WIFI (USB) -->
+                                <LinearLayout
+                                    android:id="@+id/usbAdvWifiGroup"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:paddingTop="2dp"
+                                        android:paddingBottom="6dp"
+                                        android:text="@string/btn_wifi_usb"
+                                        android:textAllCaps="true"
+                                        android:textColor="#111111"
+                                        android:textSize="15sp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="6dp"
+                                        android:text="@string/msg_wifi_note"
+                                        android:textColor="#555555"
+                                        android:textSize="12sp" />
+
+                                    <!-- SSID -->
+                                    <com.google.android.material.textfield.TextInputLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="10dp"
+                                        app:boxBackgroundMode="outline">
+
+                                        <com.google.android.material.textfield.TextInputEditText
+                                            android:id="@+id/etUsbWifiSsid"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:hint="@string/lbl_wifi_ssid"
+                                            android:inputType="text"
+                                            android:singleLine="true" />
+                                    </com.google.android.material.textfield.TextInputLayout>
+
+                                    <!-- Password -->
+                                    <com.google.android.material.textfield.TextInputLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="10dp"
+                                        app:boxBackgroundMode="outline">
+
+                                        <com.google.android.material.textfield.TextInputEditText
+                                            android:id="@+id/etUsbWifiPassword"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:hint="@string/lbl_wifi_password"
+                                            android:inputType="textVisiblePassword"
+                                            android:singleLine="true" />
+                                    </com.google.android.material.textfield.TextInputLayout>
+
+                                    <com.google.android.material.button.MaterialButton
+                                        android:id="@+id/btnUsbSetWifi"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="40dp"
+                                        android:text="@string/btn_applywifi"
+                                        android:textColor="#FFFFFF"
+                                        app:backgroundTint="#998ac3"
+                                        app:cornerRadius="8dp" />
+                                </LinearLayout>
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:background="#005BB9" />
+
+                                <!-- 4) Restore Factory (USB) -->
+                                <com.google.android.material.button.MaterialButton
+                                    android:id="@+id/btnUsbAdvRestore"
+                                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:text="@string/btn_restore"
+                                    android:textColor="#FFFFFF"
+                                    app:backgroundTint="#ffaa23"
+                                    app:textAllCaps="false" />
+
+
+                            </LinearLayout>
+
+
+                            <TextView
+                                android:id="@+id/tvUsbHint"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="6dp"
+                                android:text="@string/msg_ip_usb_note"
+                                android:textColor="#555555"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+
+                        <!-- LAN content -->
+                        <LinearLayout
+                            android:id="@+id/lanGroup"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <!-- Hàng: ô IP hiện tại + nút hoán đổi -->
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="12dp">
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:id="@+id/tilCurrentIp"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="8dp"
+                                    app:boxBackgroundMode="outline"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toStartOf="@+id/btnSwapIp"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                    <com.google.android.material.textfield.TextInputEditText
+                                        android:id="@+id/etCurrentIp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:digits="0123456789."
+                                        android:hint="@string/lbl_current_ip"
+                                        android:imeOptions="actionDone"
+                                        android:inputType="number"
+                                        android:singleLine="true" />
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                                <!-- Nút hoán đổi -->
+                                <com.google.android.material.button.MaterialButton
+                                    android:id="@+id/btnSwapIp"
+                                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                                    android:layout_width="50dp"
+                                    android:layout_height="50dp"
+                                    android:contentDescription="Hoán đổi IP"
+                                    android:minWidth="50dp"
+                                    android:minHeight="50dp"
+                                    android:padding="0dp"
+                                    app:cornerRadius="8dp"
+                                    app:icon="@drawable/ic_swap"
+                                    app:iconGravity="textStart"
+                                    app:iconPadding="0dp"
+                                    app:iconSize="30dp"
+                                    app:layout_constraintBottom_toBottomOf="@id/tilCurrentIp"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="@id/tilCurrentIp"
+                                    app:strokeWidth="0dp" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                            <!-- Hàng nút tác vụ (LAN): Kiểm tra + In trang kiểm tra -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_marginTop="8dp">
+
+                                <com.google.android.material.button.MaterialButton
+                                    android:id="@+id/btnCheck"
+                                    android:layout_width="0dp"
+                                    android:layout_height="40dp"
+                                    android:layout_weight="1"
+                                    android:text="@string/btn_check"
+                                    app:cornerRadius="8dp" />
+
+                                <com.google.android.material.button.MaterialButton
+                                    android:id="@+id/btnAdvTestPage"
+                                    android:layout_width="0dp"
+                                    android:layout_height="40dp"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_weight="1"
+                                    android:text="@string/btn_test_page"
+                                    android:textColor="#FFFFFF"
+                                    app:backgroundTint="#6750a4"
+                                    app:cornerRadius="8dp"
+                                    app:textAllCaps="false" />
+                            </LinearLayout>
+
+
+                            <!-- Thanh bung Nâng cao -->
+                            <TextView
+                                android:id="@+id/tvAdvancedToggle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="12dp"
+                                android:background="?attr/selectableItemBackground"
+                                android:padding="10dp"
+                                android:text="@string/advanced"
+                                android:textColor="#1565C0"
+                                android:textStyle="bold" />
+
+                            <!-- Nhóm Nâng cao (ẩn/mở) -->
+                            <LinearLayout
+                                android:id="@+id/groupAdvanced"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="6dp"
+                                android:orientation="vertical"
+                                android:visibility="gone">
+
+
+                                <!-- NHÓM NHỎ: Kiểm tra tính năng -->
+                                <LinearLayout
+                                    android:id="@+id/advTestGroup"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:paddingTop="2dp"
+                                        android:paddingBottom="6dp"
+                                        android:text="@string/btn_check_feature"
+                                        android:textColor="#111111"
+                                        android:textSize="15sp"
+                                        android:textStyle="bold" />
+
+                                    <!-- Hàng 1: 2 nút cùng hàng -->
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <!-- TEST IN + DAO CẮT  -->
+                                        <com.google.android.material.button.MaterialButton
+                                            android:id="@+id/btnAdvEscposTest"
+                                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                                            android:layout_width="0dp"
+                                            android:layout_height="40dp"
+                                            android:layout_weight="1"
+                                            android:text="@string/btn_cut"
+                                            android:textColor="#FFFFFF"
+                                            app:backgroundTint="#998ac3"
+                                            app:textAllCaps="false" />
+
+                                        <!-- TEST KÉT (phải) -->
+                                        <com.google.android.material.button.MaterialButton
+                                            android:id="@+id/btnAdvCashDrawer"
+                                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                                            android:layout_width="0dp"
+                                            android:layout_height="40dp"
+                                            android:layout_marginStart="8dp"
+                                            android:layout_weight="1"
+                                            android:text="@string/btn_cashdrawer"
+                                            android:textColor="#FFFFFF"
+                                            app:backgroundTint="#998ac3"
+                                            app:textAllCaps="false" />
+                                    </LinearLayout>
+
+
+                                </LinearLayout>
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:background="#005BB9" />
+
+                                <!-- 3*. SET BEEP (đặt trước DHCP) -->
+                                <LinearLayout
+                                    android:id="@+id/advBeepGroup"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:paddingTop="6dp"
+                                        android:text="@string/btn_beep_cut"
+                                        android:textColor="#111111"
+                                        android:textSize="15sp"
+                                        android:textStyle="bold" />
+
+                                    <!-- Hàng 1: Enable ON/OFF -->
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="2"
+                                            android:gravity="center_vertical"
+                                            android:text="@string/btn_status"
+                                            android:textColor="#333333"
+                                            android:textSize="14sp" />
+
+                                        <Spinner
+                                            android:id="@+id/spBeepEnable"
+                                            android:layout_width="0dp"
+                                            android:layout_height="40dp"
+                                            android:layout_weight="1" />
+                                    </LinearLayout>
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="1dp"
+                                        android:background="#d4c7df" />
+
+                                    <!-- Hàng 2: Counter 1-20 -->
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="6dp"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="2"
+                                            android:gravity="center_vertical"
+                                            android:text="@string/btn_counter"
+                                            android:textColor="#333333"
+                                            android:textSize="14sp" />
+
+                                        <Spinner
+                                            android:id="@+id/spBeepCounter"
+                                            android:layout_width="0dp"
+                                            android:layout_height="40dp"
+                                            android:layout_weight="1" />
+
+                                    </LinearLayout>
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="1dp"
+                                        android:background="#d4c7df" />
+
+                                    <!-- Hàng 3: Time (x50ms) 1-20 -->
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="6dp"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="2"
+                                            android:gravity="center_vertical"
+                                            android:text="@string/btn_duration"
+                                            android:textColor="#333333"
+                                            android:textSize="14sp" />
+
+                                        <Spinner
+                                            android:id="@+id/spBeepTime"
+                                            android:layout_width="0dp"
+                                            android:layout_height="40dp"
+                                            android:layout_weight="1" />
+                                    </LinearLayout>
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="1dp"
+                                        android:background="#d4c7df" />
+
+                                    <!-- Hàng 4: Mode 0-4 -->
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="6dp"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="2"
+                                            android:gravity="center_vertical"
+                                            android:text="@string/btn_mode"
+                                            android:textColor="#333333"
+                                            android:textSize="14sp" />
+
+                                        <Spinner
+                                            android:id="@+id/spBeepMode"
+                                            android:layout_width="0dp"
+                                            android:layout_height="40dp"
+                                            android:layout_weight="1" />
+                                    </LinearLayout>
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="1dp"
+                                        android:background="#d4c7df" />
+
+                                    <!-- Nút gửi -->
+                                    <com.google.android.material.button.MaterialButton
+                                        android:id="@+id/btnAdvBeepSet"
+                                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="40dp"
+                                        android:layout_marginTop="10dp"
+                                        android:text="@string/btn_beep"
+                                        android:textColor="#FFFFFF"
+                                        app:backgroundTint="#998ac3"
+                                        app:textAllCaps="false" />
+                                </LinearLayout>
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:background="#005BB9" />
+
+
+                                <!-- 7/8. DHCP ON / OFF -->
+                                <!-- (THAY CHO CỤM 2 NÚT DHCP ON/OFF CŨ) -->
+                                <LinearLayout
+                                    android:id="@+id/advDhcpGroup"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:paddingTop="2dp"
+                                        android:paddingBottom="6dp"
+                                        android:text="@string/btn_dhcp_config"
+                                        android:textAllCaps="true"
+                                        android:textColor="#111111"
+                                        android:textSize="15sp"
+                                        android:textStyle="bold" />
+
+                                    <!-- Hàng trạng thái: label trái + spinner phải -->
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:paddingTop="2dp"
+                                        android:paddingBottom="4dp">
+
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="40dp"
+                                            android:layout_weight="2"
+                                            android:gravity="center_vertical"
+                                            android:text="@string/btn_status"
+                                            android:textColor="#333333"
+                                            android:textSize="14sp" />
+
+                                        <Spinner
+                                            android:id="@+id/spDhcp"
+                                            android:layout_width="0dp"
+                                            android:layout_height="40dp"
+                                            android:layout_weight="1" />
+                                    </LinearLayout>
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="1dp"
+                                        android:background="#d4c7df" />
+
+                                    <com.google.android.material.button.MaterialButton
+                                        android:id="@+id/btnAdvDhcpSet"
+                                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="40dp"
+                                        android:layout_marginTop="10dp"
+                                        android:text="@string/btn_dhcp"
+                                        android:textColor="#FFFFFF"
+                                        app:backgroundTint="#998ac3"
+                                        app:textAllCaps="false" />
+                                </LinearLayout>
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:background="#005BB9" />
+
+
+                                <!-- 9. Restore Factory -->
+                                <com.google.android.material.button.MaterialButton
+                                    android:id="@+id/btnAdvRestore"
+                                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:text="@string/btn_restore"
+                                    android:textColor="#FFFFFF"
+                                    app:backgroundTint="#ffaa23"
+                                    app:textAllCaps="false" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
+                        <!-- UID content -->
+                        <LinearLayout
+                            android:id="@+id/uidGroup"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="6dp"
+                                android:text="@string/msg_scan_note"
+                                android:textColor="#555555"
+                                android:textSize="12sp" />
+
+                            <!-- Hàng chứa 2 nút: Tìm kiếm + Áp dụng -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <com.google.android.material.button.MaterialButton
+                                    android:id="@+id/btnScanUid"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp"
+                                    android:text="@string/btn_search"
+                                    android:textColor="#FFFFFF"
+                                    app:backgroundTint="#6750a4"
+                                    app:cornerRadius="8dp" />
+                            </LinearLayout>
+
+                            <!-- Đếm số thiết bị tìm thấy -->
+                            <TextView
+                                android:id="@+id/tvUidFoundCount"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:text="Tìm thấy: 0 thiết bị (MAC - IP)"
+                                android:textColor="#333333"
+                                android:textSize="14sp" />
+
+                            <!-- Danh sách máy in tìm thấy -->
+                            <ListView
+                                android:id="@+id/lvUidPrinters"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="6dp"
+                                android:choiceMode="singleChoice"
+                                android:divider="@android:color/darker_gray"
+                                android:dividerHeight="0.5dp" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- KHỐI CẤU HÌNH IP -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardConfigIp"
+                    style="@style/Widget.MaterialComponents.CardView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="16dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="4dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true">
+
+                        <!-- phần UI của anh, EditText nhập IP... -->
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:text="@string/lbl_ip"
+                            android:textColor="#111111"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:text="@string/msg_enter_new_ip"
+                            android:textColor="#555555"
+                            android:textSize="12sp" />
+
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/tilNewIp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="12dp"
+                            app:boxBackgroundMode="outline"
+                            app:endIconMode="custom"
+                            app:endIconDrawable="@drawable/ic_copy"
+                            app:endIconContentDescription="@string/copy_ip">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/etNewIp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:digits="0123456789."
+                                android:hint="@string/lbl_ip_address"
+                                android:imeOptions="actionNext"
+                                android:inputType="number"
+                                android:singleLine="true" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="12dp"
+                            app:boxBackgroundMode="outline">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/etMask"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:digits="0123456789."
+                                android:hint="@string/lbl_subnet_mask"
+                                android:imeOptions="actionNext"
+                                android:inputType="number"
+                                android:singleLine="true" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="12dp"
+                            app:boxBackgroundMode="outline">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/etGw"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:digits="0123456789."
+                                android:hint="@string/lbl_gateway"
+                                android:imeOptions="actionDone"
+                                android:inputType="number"
+                                android:singleLine="true" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                        <!-- Nút đổi IP/Áp dụng theo chế độ, chỉ 1 nút hiển thị -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginTop="2dp">
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/btnUsbChangeIp"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:text="@string/btn_change_ip"
+                                android:visibility="gone"
+                                app:cornerRadius="8dp" />
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/btnChangeIp"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:text="@string/btn_change_ip"
+                                android:visibility="gone"
+                                app:cornerRadius="8dp" />
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/btnUidApply"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:text="@string/btn_apply"
+                                android:textColor="#FFFFFF"
+                                app:backgroundTint="#6750a4"
+                                android:visibility="gone"
+                                app:cornerRadius="8dp"
+                                app:textAllCaps="false" />
+                        </LinearLayout>
+                        <!-- Checkbox dùng lệnh 1F 1B 1F 22 [IP] -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="end"
+                            android:layout_marginTop="4dp">
+
+                            <CheckBox
+                                android:id="@+id/cbLabels"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="L2/pr.4000"
+                                android:layout_gravity="end"
+                                android:visibility="gone"/>
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- KHỐI THÔNG TIN MẠNG -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardNetwork"
+                    style="@style/Widget.MaterialComponents.CardView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="16dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="4dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:id="@+id/tvSsid"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/lbl_network_name"
+                            android:textColor="#111111"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvIp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:text="string/lbl_ip_address"
+                            android:textColor="#333333"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/tvMask"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="@string/lbl_subnet_mask"
+                            android:textColor="#333333"
+                            android:textSize="14sp"
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:id="@+id/tvGw"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="@string/lbl_gateway"
+                            android:textColor="#333333"
+                            android:textSize="14sp" />
+
+                        <!-- Hàng nút hành động -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/btnRefreshNet"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@android:color/transparent"
+                                android:paddingHorizontal="12dp"
+                                android:paddingVertical="8dp"
+                                android:text="@string/btn_refresh"
+                                android:textColor="#1565C0"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/btnOpenWifi"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:background="@android:color/transparent"
+                                android:paddingHorizontal="12dp"
+                                android:paddingVertical="8dp"
+                                android:text="@string/btn_wifi"
+                                android:textColor="#1565C0"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp"
+                    android:background="@android:color/transparent"/>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+        <!-- Banner nằm đáy, là 1 phần layout -->
+        <FrameLayout
+            android:id="@+id/bannerContainer"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+
+        <!-- Nút (?) ghim dưới cùng bên trái để mở Log -->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnLogs"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginBottom="48dp"
+            android:contentDescription="Xem log"
+            android:tint="@android:color/white"
+            app:backgroundTint="#C8E4FC"
+            app:fabCustomSize="40dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/ic_help"
+
+            android:visibility="gone"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/endDrawer"
+        android:layout_width="240dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@android:color/white"
+        android:paddingTop="8dp"
+        android:paddingBottom="16dp"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:layout_gravity="end">
+
+        <!-- Header menu -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp">
+
+            <ImageButton
+                android:id="@+id/btnCloseDrawer"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/close"
+                android:src="@drawable/ic_close"/>
+
+            <TextView
+                android:id="@+id/tvDrawerTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/settings"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:layout_centerInParent="true"/>
+        </RelativeLayout>
+        '
+        <!-- Nhóm Cài đặt -->
+        <LinearLayout
+            android:id="@+id/llSettings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Hàng: Printer QR (có icon) -->
+            <TextView
+                android:id="@+id/rowPrinterQr"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:gravity="center_vertical"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:text="Printer QR"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:drawableStart="@drawable/ic_printerqr"
+                android:drawablePadding="12dp" />
+
+            <!-- Divider -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?attr/colorOutline" />
+            <!-- Hàng: Ngôn ngữ (có icon) -->
+            <TextView
+                android:id="@+id/rowLanguage"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:gravity="center_vertical"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:text="@string/settings_language"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:drawableStart="@drawable/ic_language"
+                android:drawablePadding="12dp"
+                />
+
+            <!-- Divider -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?attr/colorOutline" />
+
+            <!-- Hướng dẫn sử dụng -->
+            <TextView
+                android:id="@+id/rowGuide"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:gravity="center_vertical"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:text="@string/settings_guide"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:drawableStart="@drawable/ic_hdicon"
+                android:drawablePadding="12dp"
+                app:drawableTint="?attr/colorOnSurface" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?attr/colorOutline" />
+
+            <!-- Liên hệ  -->
+            <TextView
+                android:id="@+id/rowContact"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:gravity="center_vertical"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:text="@string/settings_contact"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:drawableStart="@drawable/ic_helpicon"
+                android:drawablePadding="12dp"
+                app:drawableTint="?attr/colorOnSurface" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?attr/colorOutline" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.drawerlayout.widget.DrawerLayout>

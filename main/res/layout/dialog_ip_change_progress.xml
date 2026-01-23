@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Đang đổi IP máy in"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:paddingBottom="12dp"/>
+
+    <!-- Step 1 -->
+    <LinearLayout
+        android:id="@+id/rowStep1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:paddingVertical="8dp"
+        android:visibility="gone"
+        android:orientation="horizontal">
+
+        <ProgressBar
+            android:id="@+id/pb1"
+            style="?android:attr/progressBarStyleSmall"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:indeterminate="true" />
+
+        <TextView
+            android:id="@+id/tv1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingStart="10dp"
+            android:text="Bước 1: Đang kiểm tra máy in trên mạng..." />
+
+        <TextView
+            android:id="@+id/iv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="16sp"
+            android:paddingStart="10dp"/>
+    </LinearLayout>
+
+    <!-- Step 2 -->
+    <LinearLayout
+        android:id="@+id/rowStep2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:paddingVertical="8dp"
+        android:visibility="gone"
+        android:orientation="horizontal">
+
+        <ProgressBar
+            android:id="@+id/pb2"
+            style="?android:attr/progressBarStyleSmall"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:indeterminate="true" />
+
+        <TextView
+            android:id="@+id/tv2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingStart="10dp"
+            android:text="Bước 2: Đang gửi lệnh đổi IP..." />
+
+        <TextView
+            android:id="@+id/iv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="16sp"
+            android:paddingStart="10dp"/>
+    </LinearLayout>
+
+    <!-- Step 3 -->
+    <LinearLayout
+        android:id="@+id/rowStep3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:paddingVertical="8dp"
+        android:visibility="gone"
+        android:orientation="horizontal">
+
+        <ProgressBar
+            android:id="@+id/pb3"
+            style="?android:attr/progressBarStyleSmall"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:indeterminate="true" />
+
+        <TextView
+            android:id="@+id/tv3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingStart="10dp"
+            android:text="Bước 3: Đang kiểm tra lại IP mới..." />
+
+        <TextView
+            android:id="@+id/iv3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="16sp"
+            android:paddingStart="10dp"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvHint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:text=""
+        android:textSize="13sp" />
+
+</LinearLayout>

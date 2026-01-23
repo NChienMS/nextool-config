@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="12dp"
+    android:background="@drawable/bg_file_item"
+    android:layout_marginBottom="8dp">
+
+    <!-- Tên file -->
+    <TextView
+        android:id="@+id/txtFileName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="example.apk"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        android:maxLines="1"
+        android:ellipsize="end" />
+
+    <!-- Hàng nút -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp">
+
+        <Button
+            android:id="@+id/btnOpen"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:text="Mở"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnInstall"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:text="Cài"
+            android:textAllCaps="false"
+            android:layout_marginStart="8dp" />
+
+        <ImageButton
+            android:id="@+id/btnMore"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="8dp"
+            android:src="@android:drawable/ic_menu_more"
+            android:background="@android:color/transparent"
+            android:contentDescription="Tuỳ chọn" />
+    </LinearLayout>
+
+</LinearLayout>

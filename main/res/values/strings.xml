@@ -1,0 +1,158 @@
+<resources>
+    <string name="app_name">PRINTER NT</string>
+    <string name="settings" translatable="false">CÀI ĐẶT</string>
+    <string name="help" translatable="false">Trợ giúp</string>
+    <string name="close" translatable="false">Đóng</string>
+
+    <string name="settings_language" translatable="false">Ngôn ngữ</string>
+    <string name="dialog_title_language" translatable="false">Thay đổi ngôn ngữ</string>
+    <string name="lang_vi" translatable="false">Tiếng Việt</string>
+    <string name="lang_en" translatable="false">Tiếng Anh</string>
+
+    <string name="btn_refresh">Làm mới</string>
+    <string name="btn_wifi">Cài đặt Wifi</string>
+    <string name="btn_wifi_usb">1.4 Cài đặt Wifi</string>
+
+
+    <string name="btn_check">Kiểm tra</string>
+    <string name="btn_change_ip">Đổi IP</string>
+    <string name="btn_test_page">In trang kiểm tra</string>
+    <string name="btn_cut">Dao cắt giấy</string>
+    <string name="btn_cashdrawer">Két tiền</string>
+    <string name="btn_beep">Áp dụng BEEP</string>
+    <string name="btn_dhcp">Áp dụng DHCP</string>
+    <string name="btn_restore">Khôi phục cài đặt</string>
+
+    <string name="btn_check_feature">1.1 KIỂM TRA TÍNH NĂNG</string>
+    <string name="btn_beep_cut">1.2 ÂM THANH KHI CẮT GIẤY</string>
+    <string name="btn_status">Trạng thái</string>
+    <string name="btn_counter">Số lần</string>
+    <string name="btn_duration">Thời gian/lần (×50ms)</string>
+    <string name="btn_mode">Kiểu âm thanh</string>
+    <string name="btn_dhcp_config">1.3 CẤU HÌNH DHCP</string>
+    <string name="btn_off">Tắt</string>
+    <string name="btn_on">Bật</string>
+
+    <string name="btn_search">Tìm kiếm</string>
+
+    <string name="btn_applywifi">Áp dụng Wi-Fi</string>
+    <string name="msg_wifi_note">* Tên wifi nên đặt không dấu, không ký tự đặc biệt.</string>
+    <string name="lbl_wifi_ssid">Tên mạng Wi-Fi (SSID)</string>
+    <string name="lbl_wifi_password">Mật khẩu Wi-Fi</string>
+    <string name="msg_ip_usb_note">* Đổi IP (USB) chỉ kiểm tra hợp lệ IPv4, không kiểm tra trùng IP.</string>
+
+    <string name="btn_apply">Đổi IP</string>
+    <string name="lbl_current_ip">IP máy in hiện tại...</string>
+    <string name="lbl_auto">TỰ ĐỘNG</string>
+    <string name="lbl_port">1. CỔNG GIAO TIẾP</string>
+    <string name="lbl_ip">2. ĐỔI IP</string>
+
+    <string name="msg_scan_note">* Ấn tìm kiếm, ứng dụng sẽ hiển thị danh sách máy in trên mạng LAN</string>
+    <string name="msg_enter_new_ip">* Điền địa chỉ IP mới muốn cài đặt</string>
+    <string name="lbl_ip_address">Địa chỉ IP...</string>
+    <string name="lbl_subnet_mask">Mặt nạ mạng...</string>
+    <string name="lbl_gateway">Bộ định tuyến...</string>
+    <string name="lbl_network_name">Tên mạng</string>
+
+    <string name="fmt_network_name">Tên mạng: %s</string>
+    <string name="fmt_ip_address">Địa chỉ IP: %s</string>
+    <string name="fmt_subnet_mask">Mặt nạ mạng: %s</string>
+    <string name="fmt_gateway">Bộ định tuyến: %s</string>
+
+    <string name="msg_network_refresh">Làm mới mạng → SSID=%1$s, IP=%2$s, MASK=%3$s, GW=%4$s</string>
+    <string name="msg_network_refreshed">Đã làm mới thông tin mạng</string>
+    <string name="err_invalid_mac">Mặt nạ mạng không hợp lệ: %s</string>
+
+
+    <string name="cmd_fail">Gửi lệnh thất bại.</string>
+    <string name="err_ip_current_invalid">Vui lòng nhập IP hiện tại hợp lệ.</string>
+    <string name="err_ip_new_invalid">Vui lòng nhập IP mới hợp lệ.</string>
+    <string name="err_mask_invalid">Vui lòng nhập mặt nạ mạng hợp lệ.</string>
+    <string name="err_gw_invalid">Vui lòng nhập bộ định tuyến hợp lệ.</string>
+    <string name="err_usb_no_device">Chưa chọn thiết bị USB, hãy ấn Tìm kiếm nếu không có thiết bị nào.</string>
+
+    <string name="advanced">Nâng cao</string>
+
+    <string name="err_gw_not_same_subnet">
+    Bộ định tuyến không cùng mạng với IP mới.\n Vui lòng kiểm tra lại các thông tin.
+    </string>
+
+
+    <!-- Loading & success -->
+    <string name="msg_sending">Đang gửi lệnh...</string>
+    <string name="sent_check_printer">Đã gửi lệnh kiểm tra máy in</string>
+    <string name="sent_change_ip">Đã gửi lệnh đổi địa chỉ IP</string>
+    <string name="sent_test_page">Đã gửi lệnh in trang kiểm tra máy in</string>
+    <string name="sent_cut_test">Đã gửi lệnh kiểm tra dao cắt giấy</string>
+    <string name="sent_cashdrawer">Đã gửi lệnh kiểm tra két tiền</string>
+    <string name="sent_beep_set">Đã gửi lệnh áp dụng âm thanh</string>
+    <string name="sent_dhcp_set">Đã gửi lệnh áp dụng DHCP</string>
+    <string name="sent_wifi_set">Đã gửi lệnh áp dụng Wi-Fi</string>
+    <string name="sent_restore_factory">Đã gửi lệnh khôi phục cài đặt gốc</string>
+
+    <string name="USBPORT">USB</string>
+    <string name="err_wifi_ssid_required">Vui lòng nhập tên Wi-Fi.</string>
+
+    <string name="usb_not_found">Chưa phát hiện cổng USB</string>
+    <string name="usb_found">Đã phát hiện</string>
+
+    <!-- LAN checking -->
+    <string name="lan_checking_ip">Đang kiểm tra IP:</string>
+    <string name="lan_found_ip">Phát hiện máy in tại IP:</string>
+    <string name="lan_retrying">: chưa mở kết nối > đang kiểm tra lại</string>
+    <string name="lan_not_printer">Có thiết bị đang sử dụng nhưng có vẻ không phải máy in</string>
+    <string name="lan_not_found">Không tìm thấy thiết bị nào tại IP</string>
+
+    <string name="lan_ip_in_use">Đã có thiết bị sử dụng. Vui lòng nhập IP khác</string>
+
+    <string name="lan_send_ok">
+    Đã gửi lệnh thành công.\n
+    • Có thể nghe “beep/click”\n
+    • Đèn mạng tắt/bật lại vài giây\n
+    • IP mới có thể sử dụng\n
+    </string>
+
+    <string name="lan_send_fail">
+    Gửi thất bại. Kiểm tra kết nối mạng/Wi-Fi và IP hiện tại \n
+    • Thử lại sau
+    </string>
+
+    <string name="open">Truy cập</string>
+
+    <string name="settings_guide">HDSD</string>
+    <string name="settings_contact">Liên hệ</string>
+    <string name="guide_url">https://nextool.vn/huongdan</string>
+    <string name="contact_title">Thông tin liên hệ</string>
+    <string name="contact_email_label">Email:</string>
+    <string name="contact_telegram_label">Telegram:</string>
+    <string name="copy_success">Đã sao chép</string>
+    <string name="splash_hello">Xin chào!</string>
+    <string name="splash_sub">Chúc bạn một ngày làm việc hiệu quả</string>
+
+    <string name="label_app_name">TÊN ỨNG DỤNG:</string>
+    <string name="label_developer">NHÀ PHÁT TRIỂN: YC SOFT</string>
+    <string name="label_desc">MÔ TẢ: Ứng dụng hỗ trợ cấu hình và kiểm tra in máy in nhiệt</string>
+    <string name="label_version">Phiên bản:</string>
+
+    <string name="about_title">Thông tin ứng dụng</string>
+    <string name="about_hint">*Chạm để sao chép, chạm lâu để liên hệ nhanh</string>
+    <string name="msg_no_browser_explain">Thiết bị không có trình duyệt hoặc WebView bị tắt, không thể mở trang hướng dẫn.</string>
+
+
+    <!-- Tiêu đề & thông báo -->
+    <string name="webmenu_help">HDSD</string>
+    <string name="webmsg_invalid_link">Liên kết không hợp lệ.</string>
+    <string name="webmsg_cannot_open_link">Không thể mở liên kết</string>
+    <string name="webmsg_no_browser_explain">
+        Thiết bị không có ứng dụng trình duyệt hoặc WebView bị tắt.
+        Vui lòng bật/cập nhật "Android System WebView" (hoặc Chrome làm WebView provider) rồi thử lại.
+    </string>
+
+    <string name="copy_ip">Sao chép IP</string>
+    <string name="copied_ip">Đã sao chép: %1$s</string>
+    <string name="ip_empty">Chưa nhập địa chỉ IP</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+</resources>
