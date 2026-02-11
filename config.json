@@ -1,14 +1,14 @@
 {
   "meta": {
-    "version": 3,
-    "updatedAt": "2026-01-12"
+    "version": 4,
+    "updatedAt": "2026-02-11"
   },
 
   "remotenoti": {
     "enabled": true,
     "title": "Chủ quyền biển đảo!",
     "content": "Hoàng Sa, Trường Sa là của Việt Nam. Đây là sự thật lịch sử và pháp lý không thể phủ nhận.",
-    "imageUrl": "https://ariesvn8.wordpress.com/wp-content/uploads/2025/09/untitled-1.jpg",
+    "imageUrl": "https://image.voh.com.vn/voh/Image/2022/07/22/status-tuyen-nguoi-yeu-6.jpg?t=o",
     "actionUrl": "https://nhandan.vn/khang-dinh-chu-quyen-cua-viet-nam-tren-hai-quan-dao-hoang-sa-truong-sa-post744843.html",
     "delaySeconds": 3,
     "showCountPerVersion": 1
